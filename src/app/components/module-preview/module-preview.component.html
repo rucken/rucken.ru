@@ -1,0 +1,109 @@
+<div
+    class="row"
+    *ngIf="!(isXS$|async)">
+    <div [ngClass]="[(images$|async).length>0?'col-md-7':'col-md-12']">
+        <ng-container *ngTemplateOutlet="titleTemplate"></ng-container>
+        <ng-container *ngTemplateOutlet="infoTemplate"></ng-container>
+    </div>
+    <div [ngClass]="[(images$|async).length>0?'col-md-5':'d-none']">
+        <ng-container *ngTemplateOutlet="imagesTemplate"></ng-container>
+    </div>
+</div>
+<div
+    class="row"
+    *ngIf="(isXS$|async)">
+    <div [ngClass]="[(images$|async).length>0?'col-md-7':'col-md-12']">
+        <ng-container *ngTemplateOutlet="titleTemplate"></ng-container>
+        <ng-container *ngTemplateOutlet="imagesTemplate"></ng-container>
+    </div>
+    <div [ngClass]="[(images$|async).length>0?'col-md-5':'col-md-12']">
+        <ng-container *ngTemplateOutlet="infoTemplate"></ng-container>
+    </div>
+</div>
+<ng-template #titleTemplate>
+    <h4>
+        {{module.title}}
+        <div class="bd-badges">
+            <span
+                class="badge"
+                [ngClass]="['badge-'+tag]"
+                *ngFor="let tag of module.tags; let f=index">
+                {{tag}}
+            </span>
+            <!-- img
+                alt="NPM version"
+                *ngIf="module.versionBadge"
+                [src]="module.versionBadge">
+            <img
+                alt="Build Status"
+                *ngIf="module.buildBadge"
+                [src]="module.buildBadge" -->
+        </div>
+    </h4>
+    <p>{{module.description}}</p>
+</ng-template>
+<ng-template #imagesTemplate>
+    <ng-container *ngIf="images$|async as images">
+        <ngx-gallery
+            *ngIf="images.length>0"
+            [options]="galleryOptions"
+            [images]="images"></ngx-gallery>
+    </ng-container>
+</ng-template>
+<ng-template #infoTemplate>
+    <ng-container *ngIf="module.samples">
+        <ng-container *ngFor="let sample of module.samples; let f=index">
+            <strong>{{sample.title}}:</strong>
+            <pre class="pre-scrollable">{{sample.code}}</pre>
+        </ng-container>
+    </ng-container>
+    <ng-container *ngIf="module.features">
+        <strong>Features:</strong>
+        <ul>
+            <ng-container *ngFor="let feature of module.features; let f=index">
+                <li *ngIf="f<maxActiveFeatures||(showAllFeatures$|async)">
+                    {{feature.description}}
+                    <ng-container *ngIf="feature.links">
+                        <ng-container *ngFor="let link of feature.links; let i=index">
+                            <ng-container *ngIf="i===0">(</ng-container>
+                            <a
+                                [href]="link.url"
+                                [title]="link.alt||''"
+                                target="_blank"
+                                [innerText]="link.title">
+                            </a>
+                            <ng-container *ngIf="i<feature.links.length-1">{{', '}}</ng-container>
+                            <ng-container *ngIf="i===feature.links.length-1">)</ng-container>
+                        </ng-container>
+                    </ng-container>
+                </li>
+            </ng-container>
+            <ng-container *ngIf="module.features.length>maxActiveFeatures&&!(showAllFeatures$|async)">
+                <button
+                    type="button"
+                    class="btn btn-link btn-block"
+                    (click)="showAllFeatures=!showAllFeatures">
+                    Show all
+                </button>
+            </ng-container>
+        </ul>
+    </ng-container>
+    <p class="bd-buttons">
+        <app-link-button
+            *ngIf="module.outputs"
+            [mainLink]="{iconClass:'fas fa-code',title:'Output files',buttonClass:'btn-secondary'}"
+            [links]="module.outputs"></app-link-button>
+        <app-link-button
+            *ngIf="module.demos"
+            [mainLink]="{iconClass:'fas fa-cloud',title:'Live demo',buttonClass:'btn-primary'}"
+            [links]="module.demos"></app-link-button>
+        <app-link-button
+            *ngIf="module.sources"
+            [mainLink]="{iconClass:'fab fa-github-alt',title:'Source code',buttonClass:'btn-github'}"
+            [links]="module.sources"></app-link-button>
+        <app-link-button
+            *ngIf="module.packages"
+            [mainLink]="{iconClass:'fab fa-npm',title:(module.packages.length>1?'Packages':'Package'),buttonClass:'btn-npm'}"
+            [links]="module.packages"></app-link-button>
+    </p>
+</ng-template>

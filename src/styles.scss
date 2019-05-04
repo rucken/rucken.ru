@@ -1,0 +1,70 @@
+@import "themes/bootstrap";
+
+html {
+  height: 100%;
+}
+body {
+  height: 100%;
+  padding-top: 56px;
+  font-family: "Ubuntu", sans-serif;
+}
+.document {
+  height: 100%;
+}
+.document-content {
+  flex: 1 0 auto;
+}
+.document-footer {
+  flex-shrink: none;
+}
+.bd-buttons {
+  a,
+  a:not([href]),
+  .btn-group {
+    margin-right: 0.5rem;
+    &.btn-block {
+      color: white;
+      margin-bottom: 0.5rem;
+    }
+  }
+  .btn-block {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+}
+.bd-badges {
+  img,
+  span {
+    margin-right: 0.5rem;
+    &.btn-block {
+      margin-bottom: 0.5rem;
+    }
+  }
+  .btn-block {
+    margin-bottom: 0.5rem;
+  }
+}
+.ngx-gallery-arrow-right,
+.ngx-gallery-arrow-left,
+.ngx-gallery-arrow {
+  z-index: 1015 !important;
+}
+.ngx-gallery-arrow {
+  color: rgba($dark, 0.7) !important;
+}
+.ngx-gallery-image-text {
+  background: rgba($dark, 0.7) !important;
+}
+.ngx-gallery-active {
+  .ngx-gallery-arrow-right,
+  .ngx-gallery-arrow-left,
+  .ngx-gallery-arrow {
+    z-index: 1030 !important;
+  }
+  .ngx-gallery-arrow {
+    color: white !important;
+  }
+}
+.dropdown-menu {
+  z-index: 1005 !important;
+}
