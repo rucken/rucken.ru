@@ -14,9 +14,7 @@ export function metaFactory(): MetaLoader {
             'og:locale': 'en_US',
             'og:locale:alternate': 'en_US,ru_RU',
             'og:image': RUCKEN_SITE.brand.bigImage,
-            'twitter:card': 'summary',
-            'og:image:width': '1240',
-            'og:image:heigh': '600'
+            'twitter:card': 'summary'
         }
     });
 }

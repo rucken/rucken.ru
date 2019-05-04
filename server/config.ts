@@ -71,7 +71,7 @@ export function getRootPath() {
 }
 export function resolveRootFile(fileName: string) {
     let file = path.resolve(__dirname || '.', getRootPath(), fileName);
-    if (file && file[0] === '/') {
+    if (file && file === '/') {
         file = '.' + file;
     }
     try {

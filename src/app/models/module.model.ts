@@ -46,7 +46,7 @@ export class ModuleModel {
     @Type(() => ModuleImageModel)
     images: ModuleImageModel[] = undefined;
 
-    @Type(() => ModuleImageModel)
+    @Type(() => ModuleFeatureModel)
     features?: ModuleFeatureModel[] = undefined;
 
     @Type(() => LinkModel)

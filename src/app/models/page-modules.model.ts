@@ -1,5 +1,4 @@
 import { plainToClassFromExist, Type } from 'class-transformer';
-import { LinkModel } from './link.model';
 import { ModuleModel } from './module.model';
 
 export class PageModulesModel<T> {
@@ -11,7 +10,7 @@ export class PageModulesModel<T> {
 
     description?: string = undefined;
 
-    @Type(() => LinkModel)
+    @Type(() => ModuleModel)
     modules: ModuleModel[] = undefined;
 
     alt?: string = undefined;
