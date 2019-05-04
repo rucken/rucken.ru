@@ -1,13 +1,35 @@
 {
   "name": "rucken",
   "version": "0.0.0",
+  "engines": {
+    "node": ">=11",
+    "npm": ">=6.5.0"
+  },
+  "private": true,
+  "license": "MIT",
+  "author": "EndyKaufman <admin@site15.ru>",
+  "description": "Rucken is a cross-platform fullstack core libraries for create Angular, NestJS and Ionic applications with samples working on NX workspace",
+  "bugs": {
+    "url": "https://github.com/rucken/rucken.io/issues"
+  },
+  "homepage": "https://github.com/rucken.io/core",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rucken.io/core.git"
+  },
+  "maintainers": [
+    {
+      "name": "EndyKaufman",
+      "email": "admin@site15.ru"
+    }
+  ],
   "scripts": {
     "ng": "ng",
     "start": "node dist/server",
     "start:client": "ng serve",
     "start:dev": "node serve-script",
     "start:prod": "cross-env NODE_ENV=production node dist/server",
-    "test": "ls",
+    "test": "npm run test",
     "lint": "ng lint",
     "e2e": "ng e2e",
     "compile:server": "webpack --config webpack.server.config.js --progress --colors --mode development",
@@ -15,7 +37,6 @@
     "build:client": "ng build --prod",
     "build:client-and-server-bundles": "ng build --prod && ng run rucken:server:production"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^8.0.0-rc.1",
     "@angular/cdk": "^7.3.7",
