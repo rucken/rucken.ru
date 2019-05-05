@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && node dist/server",
+    "start": "node dist/server",
     "start:client": "ng serve",
     "start:dev": "node serve-script",
     "start:prod": "cross-env NODE_ENV=production node dist/server",

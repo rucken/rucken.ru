@@ -1,0 +1,1 @@
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../../../server/controllers/index.ts"],"names":[],"mappings":";;AAAA,6DAAyD;AAE5C,QAAA,eAAe,GAAG;IAC3B,sCAAiB;CACpB,CAAC","sourcesContent":["import { ContactController } from './contact.controller';\n\nexport const APP_CONTROLLERS = [\n    ContactController\n];\n"]}
