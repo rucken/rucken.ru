@@ -35,7 +35,7 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors --mode development",
     "build": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client": "ng build --prod",
-    "build:client-and-server-bundles": "ng build --prod && ng run rucken:server:production"
+    "build:client-and-server-bundles": "ng build --prod && ng run rucken:server:production && ls"
   },
   "dependencies": {
     "@angular/animations": "^8.0.0-rc.1",
