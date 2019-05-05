@@ -45,7 +45,12 @@ export class DynamicPageComponent implements OnInit, OnDestroy {
       )) ||
       RUCKEN_SITE.brand.domain;
     this.page$.pipe(untilDestroyed(this)).subscribe(page => {
-      this.meta.setTitle(page.title, true);
+      this.meta.setTitle(
+        [
+          page.description, RUCKEN_SITE.brand.title
+        ].join(' - '),
+        true
+      );
       this.meta.setTag('twitter:title', page.title);
       this.meta.setTag('twitter:description', page.description);
       this.meta.setTag('twitter:site', RUCKEN_SITE.twitter.username);
