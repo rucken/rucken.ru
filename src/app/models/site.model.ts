@@ -6,6 +6,7 @@ import { PageModel } from './page.model';
 
 export class SiteBrandModel {
     title: string;
+    domain: string;
     routerLink: string[];
     image: string;
     bigImage: string;
@@ -21,6 +22,9 @@ export class SiteModel<T = 'home' | 'modules' | 'cli'> {
     brand: SiteBrandModel = undefined;
 
     pages: PageModel<T>[] = undefined;
+    twitter: {
+        username: string;
+    };
     constructor(data?: Partial<SiteModel<T>>) {
         plainToClassFromExist(this, data);
         this.pages = data.pages ? data.pages.map(page => {

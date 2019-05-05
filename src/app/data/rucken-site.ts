@@ -14,11 +14,15 @@ import { RUCKEN_TODO_MODULE } from './rucken-todo/rucken-todo';
 export const RUCKEN_SITE = new SiteModel({
     brand: {
         title: 'Rucken',
+        domain: 'https://rucken.io',
         routerLink: ['home'],
         image: 'assets/svg/rucken-icon-blue.svg',
         bigImage: 'https://rucken.io/img/rucken-og.png',
         description: 'Rucken is a cross-platform fullstack core libraries for create Angular, NestJS and Ionic applications with samples working on NX workspace',
         shortDescription: 'Rucken - A cross-platform fullstack core libraries for create applications'
+    },
+    twitter: {
+        username: 'rucken_io'
     },
     pages: [
         {

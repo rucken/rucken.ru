@@ -9,7 +9,6 @@ import { AppComponent } from './app.component';
 import { FooterModule } from './components/footer/footer.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { metaFactory } from './utils/meta-factory';
-import { CUSTOM_WINDOW_PROVIDERS } from './utils/custom-window';
 
 @NgModule({
   declarations: [
@@ -28,7 +27,6 @@ import { CUSTOM_WINDOW_PROVIDERS } from './utils/custom-window';
       useFactory: metaFactory
     }),
   ],
-  providers: [...CUSTOM_WINDOW_PROVIDERS],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
