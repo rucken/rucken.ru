@@ -1,4 +1,4 @@
-import { plainToClassFromExist, Type } from 'class-transformer';
+import { plainToClassFromExist, Transform, Type } from 'class-transformer';
 import { LinkModel } from './link.model';
 
 export class ModuleImageModel {
@@ -48,6 +48,7 @@ export class ModuleModel {
     buildBadge?: string = undefined;
 
     @Type(() => ModuleImageModel)
+    @Transform((images: ModuleImageModel[]) => !images ? [] : images.map(image => new ModuleImageModel(image)))
     images: ModuleImageModel[] = undefined;
 
     @Type(() => ModuleFeatureModel)

@@ -1,4 +1,4 @@
-import { plainToClassFromExist, Type } from 'class-transformer';
+import { plainToClassFromExist, Transform, Type } from 'class-transformer';
 import { PageContactModel } from './page-contact.model';
 import { PageExternalLinkModel } from './page-external-link.model';
 import { PageModulesModel } from './page-modules.model';
@@ -21,13 +21,8 @@ export class SiteModel<T = 'home' | 'modules' | 'cli'> {
     @Type(() => SiteBrandModel)
     brand: SiteBrandModel = undefined;
 
-    pages: PageModel<T>[] = undefined;
-    twitter: {
-        username: string;
-    };
-    constructor(data?: Partial<SiteModel<T>>) {
-        plainToClassFromExist(this, data);
-        this.pages = data.pages ? data.pages.map(page => {
+    @Transform((pages: PageModel<T>[]) =>
+        !pages ? [] : pages.map(page => {
             if (page.type === 'modules') {
                 return new PageModulesModel<T>(page);
             }
@@ -37,7 +32,14 @@ export class SiteModel<T = 'home' | 'modules' | 'cli'> {
             if (page.type === 'external-link') {
                 return new PageExternalLinkModel<T>(page);
             }
-        }) : [];
+        })
+    )
+    pages: PageModel<T>[] = undefined;
+    twitter: {
+        username: string;
+    };
+    constructor(data?: Partial<SiteModel<T>>) {
+        plainToClassFromExist(this, data);
     }
     getPageByName(name: T) {
         const pages = this.pages.filter(page => page.name === name);

@@ -6,6 +6,8 @@ addons:
   ssh_known_hosts:
   - "$REMOTE_HOST"
   - "$REMOTE_HOST_IP"
+notifications:
+  webhooks: https://fathomless-fjord-24024.herokuapp.com/notify
 after_success:
 - chmod +x ".travis/public-patch.js"
 - chmod +x ".travis/public-deploy.sh"
