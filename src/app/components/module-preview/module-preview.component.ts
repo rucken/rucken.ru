@@ -91,10 +91,11 @@ export class ModulePreviewComponent implements OnChanges, OnInit {
   }
   initImages(images: {
     src: string;
+    thumb?: string;
     description?: string;
   }[]) {
     this.images = images.map((image, index) => new NgxGalleryImage({
-      small: image.src,
+      small: image.thumb || image.src.replace('.png', '_thumb.png'),
       medium: image.src,
       big: image.src,
       description: image.description

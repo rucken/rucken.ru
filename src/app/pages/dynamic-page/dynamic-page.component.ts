@@ -61,8 +61,8 @@ export class DynamicPageComponent implements OnInit, OnDestroy {
         const firstImage = page.modules.map(module => module.images[0]).filter(image => image)[0];
         if (firstImage) {
           this.meta.setTag('twitter:image:alt', firstImage.description);
-          this.meta.setTag('twitter:image', `${host}/${firstImage.src}`);
-          this.meta.setTag('og:image', `${host}/${firstImage.src}`);
+          this.meta.setTag('twitter:image', `${host}/${firstImage.thumb}`);
+          this.meta.setTag('og:image', `${host}/${firstImage.thumb}`);
         }
       }
     });

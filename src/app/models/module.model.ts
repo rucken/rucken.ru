@@ -3,11 +3,15 @@ import { LinkModel } from './link.model';
 
 export class ModuleImageModel {
     src: string = undefined;
+    thumb?: string = undefined;
 
     description?: string = undefined;
 
     constructor(data?: Partial<ModuleImageModel>) {
         plainToClassFromExist(this, data);
+        if (this.src) {
+            this.thumb = this.src.replace('.png', '_thumb.png');
+        }
     }
 }
 export class ModuleFeatureModel {
