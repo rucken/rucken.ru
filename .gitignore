@@ -4,7 +4,7 @@
 *.env
 
 # compiled output
-# /dist
+/dist
 /tmp
 /out-tsc
 # Only exists if Bazel was run
@@ -47,3 +47,7 @@ testem.log
 # System Files
 .DS_Store
 Thumbs.db
+
+# Credentials
+.travis/*.key
+.travis/*.key.pub
