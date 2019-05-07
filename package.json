@@ -35,7 +35,8 @@
     "compile:server": "webpack --config webpack.server.config.js --progress --colors --mode development",
     "build": "npm run build:client-and-server-bundles && npm run compile:server",
     "build:client": "ng build --prod",
-    "build:client-and-server-bundles": "ng build --prod && ng run rucken:server:production && ls"
+    "build:client-and-server-bundles": "ng build --prod && ng run rucken:server:production && ls",
+    "thumb": "./node_modules/.bin/ts-node ./scripts/create-thumb.ts"
   },
   "dependencies": {
     "@angular/animations": "^8.0.0-rc.1",
@@ -64,6 +65,7 @@
     "dotenv": "^8.0.0",
     "hammerjs": "^2.0.8",
     "handlebars": "^4.1.2",
+    "jimp": "^0.6.4",
     "lodash-es": "^4.17.11",
     "lodash.get": "^4.4.2",
     "ngx-bootstrap": "^4.2.0",
@@ -72,7 +74,9 @@
     "ngx-take-until-destroy": "^5.4.0",
     "ngx-toastr": "^10.0.2",
     "nodemailer": "^6.1.1",
+    "recursive-readdir": "^2.2.2",
     "reflect-metadata": "^0.1.13",
+    "replace-ext": "^1.0.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.9.0",
     "zone.js": "~0.9.0"
@@ -89,6 +93,8 @@
     "@types/lodash.get": "^4.4.6",
     "@types/node": "~11.13.7",
     "@types/nodemailer": "^4.6.8",
+    "@types/recursive-readdir": "^2.2.0",
+    "@types/replace-ext": "0.0.27",
     "codelyzer": "^5.0.1",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
