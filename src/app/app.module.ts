@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { FooterModule } from './components/footer/footer.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { metaFactory } from './utils/meta-factory';
-
+import { Angulartics2Module } from 'angulartics2';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,6 +26,7 @@ import { metaFactory } from './utils/meta-factory';
       provide: MetaLoader,
       useFactory: metaFactory
     }),
+    Angulartics2Module.forRoot()
   ],
   bootstrap: [AppComponent]
 })

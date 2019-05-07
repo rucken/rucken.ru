@@ -1,4 +1,8 @@
 <a
+    angulartics2On="click"
+    angularticsAction="href"
+    angularticsCategory="link-button"
+    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
     *ngIf="links.length<=1"
     class="btn"
     [ngClass]="[(mainLink.buttonClass||links[0].buttonClass)?(mainLink.buttonClass||links[0].buttonClass):buttonDefaultClass, (isXS$|async)?'btn-block':'']"
@@ -14,6 +18,10 @@
     {{mainLink.title||links[0].title}}
 </a>
 <a
+    angulartics2On="click"
+    angularticsAction="open-link-dropdown-menu-modal"
+    angularticsCategory="link-button"
+    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
     *ngIf="links.length>1 && (isXS$|async)"
     class="btn"
     [ngClass]="[(mainLink.buttonClass||links[0].buttonClass)?(mainLink.buttonClass||links[0].buttonClass):buttonDefaultClass, (isXS$|async)?'btn-block':'']"
@@ -33,6 +41,10 @@
     class="btn-group"
     dropdown>
     <button
+        angulartics2On="click"
+        angularticsAction="on-dropdown"
+        angularticsCategory="link-button"
+        [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
         dropdownToggle
         type="button"
         class="btn dropdown-toggle"
@@ -55,6 +67,10 @@
                 role="menuitem"
                 *ngFor="let link of links; let i=index">
                 <a
+                    angulartics2On="click"
+                    angularticsAction="dropdown-href"
+                    angularticsCategory="link-button"
+                    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
                     class="dropdown-item"
                     [href]="link.url||undefined"
                     [title]="link.alt||''"

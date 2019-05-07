@@ -1,6 +1,10 @@
 <div class="modal-header">
     <h4 class="modal-title pull-left">Select link</h4>
     <button
+        angulartics2On="click"
+        angularticsAction="close"
+        angularticsCategory="link-dropdown-menu-modal"
+        [angularticsProperties]="{'page': page.name, 'module':module.name,'links':(links|json)}"
         type="button"
         class="close pull-right"
         aria-label="Close"
@@ -12,6 +16,9 @@
     <div class="bd-badges">
         <ng-container *ngFor="let link of links">
             <app-link-button
+                parent="link-dropdown-menu-modal"
+                [page]="page"
+                [module]="module"
                 [links]="[link]"
                 buttonDefaultClass="btn-secondary"></app-link-button>
         </ng-container>

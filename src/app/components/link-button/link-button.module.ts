@@ -7,6 +7,7 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { PipeModule } from 'src/app/pipes/pipe.module';
 import { LinkButtonComponent } from './link-button.component';
 import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-dropdown-menu-modal.component';
+import { Angulartics2Module } from 'angulartics2';
 @NgModule({
   imports: [
     CommonModule,
@@ -14,7 +15,8 @@ import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-
     ModalModule.forRoot(),
     BsDropdownModule.forRoot(),
     PipeModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    Angulartics2Module
   ],
   entryComponents: [LinkDropdownMenuModalComponent],
   declarations: [LinkButtonComponent, LinkDropdownMenuModalComponent],

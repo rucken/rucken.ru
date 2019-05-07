@@ -12,6 +12,10 @@
             {{site?.brand?.title}}
         </a>
         <button
+            angulartics2On="click"
+            angularticsAction="toggler"
+            angularticsCategory="navbar"
+            [angularticsProperties]="{'isCollapsed': isCollapsed}"
             class="navbar-toggler"
             type="button"
             (click)="isCollapsed=!isCollapsed">

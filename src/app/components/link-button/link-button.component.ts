@@ -1,9 +1,11 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { BsModalService } from 'ngx-bootstrap/modal';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { LinkModel } from 'src/app/models/link.model';
-import { BsModalService } from 'ngx-bootstrap/modal';
+import { ModuleModel } from 'src/app/models/module.model';
+import { PageModulesModel } from 'src/app/models/page-modules.model';
 import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-dropdown-menu-modal.component';
 
 @Component({
@@ -12,6 +14,12 @@ import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinkButtonComponent {
+  @Input()
+  parent: string;
+  @Input()
+  page: PageModulesModel<any>;
+  @Input()
+  module: ModuleModel;
   @Input()
   buttonDefaultClass = 'btn-primary';
   @Input()
@@ -31,6 +39,8 @@ export class LinkButtonComponent {
   }
   openLinkDropdownMenuModal() {
     const initialState = {
+      page: this.page,
+      module: this.module,
       links: this.links
     };
     this.modalService.show(

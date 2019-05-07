@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Angulartics2GoogleAnalytics } from 'angulartics2/ga';
 import { RUCKEN_SITE } from './data/rucken-site';
 
 @Component({
@@ -8,4 +9,7 @@ import { RUCKEN_SITE } from './data/rucken-site';
 })
 export class AppComponent {
   site = RUCKEN_SITE;
+  constructor(angulartics2GoogleAnalytics: Angulartics2GoogleAnalytics) {
+    angulartics2GoogleAnalytics.startTracking();
+  }
 }

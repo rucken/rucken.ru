@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { BsModalRef } from 'ngx-bootstrap/modal';
 import { LinkModel } from 'src/app/models/link.model';
+import { PageModulesModel } from 'src/app/models/page-modules.model';
+import { ModuleModel } from 'src/app/models/module.model';
 
 @Component({
   selector: 'app-link-dropdown-menu-modal',
@@ -8,6 +10,10 @@ import { LinkModel } from 'src/app/models/link.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class LinkDropdownMenuModalComponent {
+  @Input()
+  page: PageModulesModel<any>;
+  @Input()
+  module: ModuleModel;
   @Input()
   links: LinkModel[] = [];
   constructor(public modalRef: BsModalRef) {

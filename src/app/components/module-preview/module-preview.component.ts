@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { MediaObserver } from '@angular/flex-layout';
+import { Angulartics2 } from 'angulartics2';
 import { BindObservable } from 'bind-observable';
 import { NgxGalleryAnimation, NgxGalleryImage, NgxGalleryOptions } from 'ngx-gallery';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { ModuleModel } from 'src/app/models/module.model';
+import { PageModulesModel } from 'src/app/models/page-modules.model';
 
 @Component({
   selector: 'app-module-preview',
@@ -12,6 +14,8 @@ import { ModuleModel } from 'src/app/models/module.model';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ModulePreviewComponent implements OnChanges, OnInit {
+  @Input()
+  page: PageModulesModel<any>;
   @Input()
   maxActiveFeatures = 10;
   @Input()
@@ -75,12 +79,14 @@ export class ModulePreviewComponent implements OnChanges, OnInit {
 
   isXS$: Observable<boolean>;
 
-  constructor(private mediaObserver: MediaObserver) {
+  constructor(
+    private mediaObserver: MediaObserver,
+    private angulartics2: Angulartics2
+  ) {
     this.isXS$ = this.mediaObserver.media$.pipe(
       map(change => change.mqAlias === 'xs' || change.mqAlias === 'sm')
     );
   }
-
   ngOnInit(): void {
     this.initImages(this.module.images || []);
   }
@@ -88,6 +94,17 @@ export class ModulePreviewComponent implements OnChanges, OnInit {
     if (changes.module && changes.module instanceof ModuleModel) {
       this.initImages(changes.module.images || []);
     }
+  }
+  onGalleryEvents(eventName: string, customData: any) {
+    this.angulartics2.eventTrack.next({
+      action: eventName,
+      properties: {
+        category: 'gallery',
+        page: this.page.name,
+        module: this.module.name,
+        ...customData
+      },
+    });
   }
   initImages(images: {
     src: string;
