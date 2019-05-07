@@ -1,1 +1,0 @@
-{"version":3,"file":"mailer-options.constant.js","sourceRoot":"","sources":["../../../../../server/modules/mailer/constants/mailer-options.constant.ts"],"names":[],"mappings":";;AAAa,QAAA,cAAc,GAAG,gBAAgB,CAAC","sourcesContent":["export const MAILER_OPTIONS = 'MAILER_OPTIONS';\n"]}
