@@ -15,7 +15,8 @@
             angulartics2On="click"
             angularticsAction="toggler"
             angularticsCategory="navbar"
-            [angularticsProperties]="{'isCollapsed': isCollapsed}"
+            angularticsLabel="isCollapsed"
+            [angularticsValue]="isCollapsed?1:0"
             class="navbar-toggler"
             type="button"
             (click)="isCollapsed=!isCollapsed">
@@ -57,6 +58,11 @@
                         routerLinkActive="active"
                         *ngIf="page.type==='external-link'">
                         <a
+                            angulartics2On="click"
+                            angularticsAction="external-url"
+                            angularticsCategory="navbar"
+                            [angularticsLabel]="page.title"
+                            [angularticsValue]="1"
                             class="nav-link"
                             [href]="page.externalUrl"
                             target="_blank">

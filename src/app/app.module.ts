@@ -10,6 +10,7 @@ import { FooterModule } from './components/footer/footer.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { metaFactory } from './utils/meta-factory';
 import { Angulartics2Module } from 'angulartics2';
+
 @NgModule({
   declarations: [
     AppComponent

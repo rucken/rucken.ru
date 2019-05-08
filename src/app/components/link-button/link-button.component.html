@@ -1,8 +1,9 @@
 <a
     angulartics2On="click"
-    angularticsAction="href"
-    angularticsCategory="link-button"
-    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
+    angularticsAction="link-button"
+    [angularticsCategory]="parent"
+    [angularticsLabel]="mainLink.title||links[0].title"
+    [angularticsValue]="1"
     *ngIf="links.length<=1"
     class="btn"
     [ngClass]="[(mainLink.buttonClass||links[0].buttonClass)?(mainLink.buttonClass||links[0].buttonClass):buttonDefaultClass, (isXS$|async)?'btn-block':'']"
@@ -19,9 +20,10 @@
 </a>
 <a
     angulartics2On="click"
-    angularticsAction="open-link-dropdown-menu-modal"
-    angularticsCategory="link-button"
-    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
+    angularticsAction="link-button"
+    [angularticsCategory]="parent"
+    [angularticsLabel]="mainLink.title||links[0].title"
+    [angularticsValue]="1"
     *ngIf="links.length>1 && (isXS$|async)"
     class="btn"
     [ngClass]="[(mainLink.buttonClass||links[0].buttonClass)?(mainLink.buttonClass||links[0].buttonClass):buttonDefaultClass, (isXS$|async)?'btn-block':'']"
@@ -42,9 +44,10 @@
     dropdown>
     <button
         angulartics2On="click"
-        angularticsAction="on-dropdown"
-        angularticsCategory="link-button"
-        [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
+        angularticsAction="link-button"
+        [angularticsCategory]="parent"
+        [angularticsLabel]="mainLink.title"
+        [angularticsValue]="1"
         dropdownToggle
         type="button"
         class="btn dropdown-toggle"
@@ -68,9 +71,10 @@
                 *ngFor="let link of links; let i=index">
                 <a
                     angulartics2On="click"
-                    angularticsAction="dropdown-href"
-                    angularticsCategory="link-button"
-                    [angularticsProperties]="{'parent':parent, 'page': page.name, 'module':module.name,'links':(links|json)}"
+                    angularticsAction="link-button"
+                    [angularticsCategory]="parent"
+                    [angularticsLabel]="link.title"
+                    [angularticsValue]="1"
                     class="dropdown-item"
                     [href]="link.url||undefined"
                     [title]="link.alt||''"

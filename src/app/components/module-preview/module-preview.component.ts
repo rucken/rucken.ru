@@ -100,9 +100,8 @@ export class ModulePreviewComponent implements OnChanges, OnInit {
       action: eventName,
       properties: {
         category: 'gallery',
-        page: this.page.name,
-        module: this.module.name,
-        ...customData
+        label: customData && customData.image && customData.image.description,
+        value: 1
       },
     });
   }

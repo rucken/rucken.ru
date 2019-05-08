@@ -71,6 +71,11 @@
                         <ng-container *ngFor="let link of feature.links; let i=index">
                             <ng-container *ngIf="i===0">(</ng-container>
                             <a
+                                angulartics2On="click"
+                                angularticsAction="feature-link"
+                                angularticsCategory="module-preview"
+                                [angularticsLabel]="link.title"
+                                [angularticsValue]="1"
                                 [href]="link.url"
                                 [title]="link.alt||''"
                                 target="_blank"
@@ -87,7 +92,8 @@
                     angulartics2On="click"
                     angularticsAction="show-all-features"
                     angularticsCategory="module-preview"
-                    [angularticsProperties]="{'page': page.name, 'module':module.name}"
+                    [angularticsLabel]="module.name"
+                    [angularticsValue]="1"
                     type="button"
                     class="btn btn-link btn-block"
                     (click)="showAllFeatures=!showAllFeatures">
@@ -98,30 +104,22 @@
     </ng-container>
     <p class="bd-buttons">
         <app-link-button
-            parent="module"
-            [page]="page"
-            [module]="module"
+            [parent]="module.name"
             *ngIf="module.outputs"
             [mainLink]="{iconClass:'fas fa-code',title:'Output files',buttonClass:'btn-secondary'}"
             [links]="module.outputs"></app-link-button>
         <app-link-button
-            parent="module"
-            [page]="page"
-            [module]="module"
+            [parent]="module.name"
             *ngIf="module.demos"
             [mainLink]="{iconClass:'fas fa-cloud',title:'Live demo',buttonClass:'btn-primary'}"
             [links]="module.demos"></app-link-button>
         <app-link-button
-            parent="module"
-            [page]="page"
-            [module]="module"
+            [parent]="module.name"
             *ngIf="module.sources"
             [mainLink]="{iconClass:'fab fa-github-alt',title:'Source code',buttonClass:'btn-github'}"
             [links]="module.sources"></app-link-button>
         <app-link-button
-            parent="module"
-            [page]="page"
-            [module]="module"
+            [parent]="module.name"
             *ngIf="module.packages"
             [mainLink]="{iconClass:'fab fa-npm',title:(module.packages.length>1?'Packages':'Package'),buttonClass:'btn-npm'}"
             [links]="module.packages"></app-link-button>

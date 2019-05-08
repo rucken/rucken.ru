@@ -17,10 +17,6 @@ export class LinkButtonComponent {
   @Input()
   parent: string;
   @Input()
-  page: PageModulesModel<any>;
-  @Input()
-  module: ModuleModel;
-  @Input()
   buttonDefaultClass = 'btn-primary';
   @Input()
   mainLink: LinkModel = new LinkModel();
@@ -38,9 +34,8 @@ export class LinkButtonComponent {
     );
   }
   openLinkDropdownMenuModal() {
-    const initialState = {
-      page: this.page,
-      module: this.module,
+    const initialState: Partial<LinkDropdownMenuModalComponent> = {
+      parent: this.parent,
       links: this.links
     };
     this.modalService.show(
