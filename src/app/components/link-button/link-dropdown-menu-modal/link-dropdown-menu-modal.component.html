@@ -3,9 +3,7 @@
     <button
         angulartics2On="click"
         angularticsAction="link-dropdown-menu-modal"
-        [angularticsCategory]="parent"
-        angularticsLabel="close"
-        [angularticsValue]="1"
+        [angularticsCategory]="category"
         type="button"
         class="close pull-right"
         aria-label="Close"
@@ -17,7 +15,7 @@
     <div class="bd-badges">
         <ng-container *ngFor="let link of links">
             <app-link-button
-                [parent]="parent"
+                [category]="category"
                 [links]="[link]"
                 buttonDefaultClass="btn-secondary"></app-link-button>
         </ng-container>

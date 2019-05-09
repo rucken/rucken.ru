@@ -19,11 +19,6 @@
         <meta
             name="google-site-verification"
             content="t7-lBbnkJMENaHQSlfoIhY1HVViGWpTZf6_Fl40PsCA">
-        <link rel="canonical" href="https://rucken.net">
-        <link rel="canonical" href="https://rucken.org">
-        <link rel="canonical" href="https://rucken.io">
-        <link rel="canonical" href="https://rucken.info">
-        <link rel="canonical" href="https://rucken.ru">
 
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <link rel="icon" type="image/png" href="/img/favicon-16x16.png" sizes="16x16">
@@ -115,10 +110,31 @@
             gtag('config', 'UA-139810609-1');
         </script>
 
+        <link rel="manifest" href="manifest.json">
+        <meta
+            name="theme-color"
+            content="#343a40">
     </head>
     <body>
         <app-root>
             <div class="loader">Loading...</div>
         </app-root>
+        <noscript>
+            Please enable JavaScript to continue using this application.
+        </noscript>
+        <script>
+            if ('serviceWorker' in navigator) {
+                navigator.serviceWorker
+                .getRegistrations()
+                .then(function(registrations) {
+                    registrations.forEach(registration => {
+                    registration
+                        .unregister()
+                        .then(function(register) {})
+                        .catch(function(error) {});
+                    });
+                });
+            }
+        </script>
     </body>
 </html>

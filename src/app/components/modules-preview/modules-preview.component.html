@@ -4,6 +4,7 @@
         [ngClass]="{'bg-light':(i % 2 !== 0)}">
         <div class="container">
             <app-module-preview
+                [page]="page"
                 [module]="module"
                 [even]="i % 2 === 0">
             </app-module-preview>

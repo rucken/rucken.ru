@@ -10,13 +10,15 @@ import { FooterModule } from './components/footer/footer.module';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { metaFactory } from './utils/meta-factory';
 import { Angulartics2Module } from 'angulartics2';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'ruckenIo' }),
     HttpClientModule,
     NavbarModule,
     FooterModule,
@@ -27,7 +29,8 @@ import { Angulartics2Module } from 'angulartics2';
       provide: MetaLoader,
       useFactory: metaFactory
     }),
-    Angulartics2Module.forRoot()
+    Angulartics2Module.forRoot(),
+    ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   bootstrap: [AppComponent]
 })

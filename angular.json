@@ -27,7 +27,8 @@
               "src/sitemap.xml",
               "src/favicon.ico",
               "src/assets",
-              "src/img"
+              "src/img",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.scss"
@@ -57,7 +58,9 @@
                   "maximumWarning": "2mb",
                   "maximumError": "5mb"
                 }
-              ]
+              ],
+              "serviceWorker": true,
+              "ngswConfigPath": "src/ngsw-config.json"
             }
           }
         },
@@ -90,7 +93,8 @@
               "src/sitemap.xml",
               "src/favicon.ico",
               "src/assets",
-              "src/img"
+              "src/img",
+              "src/manifest.json"
             ],
             "styles": [
               "src/styles.scss"

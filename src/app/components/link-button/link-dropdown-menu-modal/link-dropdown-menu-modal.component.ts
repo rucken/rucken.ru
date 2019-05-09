@@ -11,7 +11,7 @@ import { PageModulesModel } from 'src/app/models/page-modules.model';
 })
 export class LinkDropdownMenuModalComponent {
   @Input()
-  parent: string;
+  category: string;
   @Input()
   links: LinkModel[] = [];
   constructor(public modalRef: BsModalRef) {

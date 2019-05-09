@@ -15,7 +15,9 @@ import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-
 })
 export class LinkButtonComponent {
   @Input()
-  parent: string;
+  category: string;
+  @Input()
+  module: string;
   @Input()
   buttonDefaultClass = 'btn-primary';
   @Input()
@@ -35,7 +37,7 @@ export class LinkButtonComponent {
   }
   openLinkDropdownMenuModal() {
     const initialState: Partial<LinkDropdownMenuModalComponent> = {
-      parent: this.parent,
+      category: this.category,
       links: this.links
     };
     this.modalService.show(

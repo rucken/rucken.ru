@@ -1,8 +1,8 @@
 <a
     angulartics2On="click"
     angularticsAction="link-button"
-    [angularticsCategory]="parent"
-    [angularticsLabel]="mainLink.title||links[0].title"
+    [angularticsCategory]="category"
+    [angularticsLabel]="module+': '+mainLink.title||links[0].title"
     [angularticsValue]="1"
     *ngIf="links.length<=1"
     class="btn"
@@ -21,15 +21,14 @@
 <a
     angulartics2On="click"
     angularticsAction="link-button"
-    [angularticsCategory]="parent"
-    [angularticsLabel]="mainLink.title||links[0].title"
+    [angularticsCategory]="category"
+    [angularticsLabel]="module+': '+mainLink.title||links[0].title"
     [angularticsValue]="1"
     *ngIf="links.length>1 && (isXS$|async)"
     class="btn"
     [ngClass]="[(mainLink.buttonClass||links[0].buttonClass)?(mainLink.buttonClass||links[0].buttonClass):buttonDefaultClass, (isXS$|async)?'btn-block':'']"
     (click)="openLinkDropdownMenuModal()"
-    [title]="mainLink.alt||links[0].alt||''"
-    target="_blank">
+    [title]="mainLink.alt||links[0].alt||''">
     <span
         *ngIf="mainLink.iconSvg||links[0].iconSvg"
         [innerHtml]="mainLink.iconSvg||links[0].iconSvg|safeHtml"></span>
@@ -45,8 +44,8 @@
     <button
         angulartics2On="click"
         angularticsAction="link-button"
-        [angularticsCategory]="parent"
-        [angularticsLabel]="mainLink.title"
+        [angularticsCategory]="category"
+        [angularticsLabel]="module+': '+mainLink.title"
         [angularticsValue]="1"
         dropdownToggle
         type="button"
@@ -72,8 +71,8 @@
                 <a
                     angulartics2On="click"
                     angularticsAction="link-button"
-                    [angularticsCategory]="parent"
-                    [angularticsLabel]="link.title"
+                    [angularticsCategory]="category"
+                    [angularticsLabel]="module+': '+link.title"
                     [angularticsValue]="1"
                     class="dropdown-item"
                     [href]="link.url||undefined"
