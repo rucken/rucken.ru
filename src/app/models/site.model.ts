@@ -18,6 +18,10 @@ export class SiteBrandModel {
 }
 
 export class SiteModel<T = 'home' | 'modules' | 'cli'> {
+    logger: {
+        sentryDsn: string;
+    };
+
     @Type(() => SiteBrandModel)
     brand: SiteBrandModel = undefined;
 

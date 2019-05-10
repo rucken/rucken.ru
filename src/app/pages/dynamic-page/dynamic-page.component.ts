@@ -45,25 +45,27 @@ export class DynamicPageComponent implements OnInit, OnDestroy {
       )) ||
       RUCKEN_SITE.brand.domain;
     this.page$.pipe(untilDestroyed(this)).subscribe(page => {
-      this.meta.setTitle(
-        [
-          page.description, RUCKEN_SITE.brand.title
-        ].join(' - '),
-        true
-      );
-      this.meta.setTag('twitter:title', page.title);
-      this.meta.setTag('twitter:description', page.description);
-      this.meta.setTag('twitter:site', `@${RUCKEN_SITE.twitter.username}`);
-      this.meta.setTag('og:title', page.title);
-      this.meta.setTag('og:description', page.description);
-      this.meta.setTag('og:url', `${host}/${page.name}`);
-      if (page.type === 'modules') {
-        const firstImage = page.modules.map(module => module.images[0]).filter(image => image)[0];
-        if (firstImage) {
-          this.meta.setTag('twitter:image:alt', firstImage.description);
-          this.meta.setTag('twitter:image', `${host}/${firstImage.thumb}`);
-          this.meta.setTag('og:image:alt', firstImage.description);
-          this.meta.setTag('og:image', `${host}/${firstImage.thumb}`);
+      if (page) {
+        this.meta.setTitle(
+          [
+            page.description, RUCKEN_SITE.brand.title
+          ].join(' - '),
+          true
+        );
+        this.meta.setTag('twitter:title', page.title);
+        this.meta.setTag('twitter:description', page.description);
+        this.meta.setTag('twitter:site', `@${RUCKEN_SITE.twitter.username}`);
+        this.meta.setTag('og:title', page.title);
+        this.meta.setTag('og:description', page.description);
+        this.meta.setTag('og:url', `${host}/${page.name}`);
+        if (page.type === 'modules') {
+          const firstImage = page.modules.map(module => module.images[0]).filter(image => image)[0];
+          if (firstImage) {
+            this.meta.setTag('twitter:image:alt', firstImage.description);
+            this.meta.setTag('twitter:image', `${host}/${firstImage.thumb}`);
+            this.meta.setTag('og:image:alt', firstImage.description);
+            this.meta.setTag('og:image', `${host}/${firstImage.thumb}`);
+          }
         }
       }
     });

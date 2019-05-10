@@ -12,6 +12,9 @@ import { RUCKEN_WEB_APPLICATION } from './rucken-core/rucken-web';
 import { RUCKEN_TODO_MODULE } from './rucken-todo/rucken-todo';
 
 export const RUCKEN_SITE = new SiteModel({
+    logger: {
+        sentryDsn: 'https://69151c7c4350444b85883a2cbc328ee7@sentry.io/1456889'
+    },
     brand: {
         title: 'Rucken',
         domain: 'https://rucken.io',

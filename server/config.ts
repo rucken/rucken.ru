@@ -21,6 +21,9 @@ try {
     }
 }
 export interface IConfig {
+    logger: {
+        sentryDsn: string;
+    };
     env: {
         name: string;
         port: number;
@@ -42,6 +45,9 @@ export interface IConfig {
     };
 }
 export const config: IConfig = {
+    logger: {
+        sentryDsn: 'https://69151c7c4350444b85883a2cbc328ee7@sentry.io/1456889'
+    },
     env: {
         name: NODE_ENV,
         port: process.env.PORT ? +process.env.PORT : 3000,
