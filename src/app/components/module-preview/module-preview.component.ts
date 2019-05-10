@@ -97,10 +97,10 @@ export class ModulePreviewComponent implements OnChanges, OnInit {
   }
   onGalleryEvents(eventName: string, customData: any) {
     this.angulartics2.eventTrack.next({
-      action: eventName,
+      action: `module-preview: ${eventName}`,
       properties: {
-        category: 'gallery',
-        label: customData && customData.image && customData.image.description,
+        category: this.page.name,
+        label: `${this.module.name}: ${customData && customData.image && customData.image.description}`,
         value: 1
       },
     });
