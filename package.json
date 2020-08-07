@@ -63,7 +63,7 @@
     "angulartics2": "^7.5.2",
     "bind-observable": "^1.0.2",
     "bootstrap": "^4.3.1",
-    "class-transformer": "^0.2.0",
+    "class-transformer": "^0.3.1",
     "class-validator": "^0.9.1",
     "cross-env": "^5.2.0",
     "dotenv": "^8.0.0",
