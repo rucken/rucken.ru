@@ -9,12 +9,12 @@
   "author": "EndyKaufman <admin@site15.ru>",
   "description": "Rucken is a cross-platform fullstack core libraries for create Angular, NestJS and Ionic applications with samples working on NX workspace",
   "bugs": {
-    "url": "https://github.com/rucken/rucken.io/issues"
+    "url": "https://github.com/rucken/rucken.ru/issues"
   },
-  "homepage": "https://github.com/rucken.io/core",
+  "homepage": "https://github.com/rucken.ru/core",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/rucken.io/core.git"
+    "url": "git+https://github.com/rucken.ru/core.git"
   },
   "maintainers": [
     {

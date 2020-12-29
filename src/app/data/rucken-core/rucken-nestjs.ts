@@ -55,7 +55,7 @@ export const RUCKEN_NESTJS_APPLICATION = new ModuleModel({
         },
     ],
     demos: [{
-        url: 'https://core-nestjs.rucken.io/'
+        url: 'https://core-nestjs.rucken.ru/'
     }],
     sources: [{
         url: 'https://github.com/rucken/core-nestjs'

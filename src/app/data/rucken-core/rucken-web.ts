@@ -123,7 +123,7 @@ export const RUCKEN_WEB_APPLICATION = new ModuleModel({
         },
     ],
     demos: [{
-        url: 'https://web.rucken.io'
+        url: 'https://web.rucken.ru'
     }],
     sources: [{
         url: 'https://github.com/rucken/core'

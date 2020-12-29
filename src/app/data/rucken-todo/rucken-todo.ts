@@ -109,7 +109,7 @@ export const RUCKEN_TODO_MODULE = new ModuleModel({
     }, {
         buttonClass: 'btn-nestjs',
         title: 'Online for NestJS',
-        url: 'https://todo-nestjs.rucken.io/'
+        url: 'https://todo-nestjs.rucken.ru/'
     }, {
         title: 'Application for Android',
         url: 'https://rucken.github.io/todo-ionic/rucken-todo-ionic.apk'
