@@ -1,0 +1,102 @@
+<a
+  angulartics2On="click"
+  angularticsAction="link-button"
+  [angularticsCategory]="category"
+  [angularticsLabel]="module + ': ' + (mainLink.title || links[0].title)"
+  [angularticsValue]="1"
+  *ngIf="links.length <= 1"
+  class="btn"
+  [ngClass]="[
+    mainLink.buttonClass || links[0].buttonClass
+      ? mainLink.buttonClass || links[0].buttonClass
+      : buttonDefaultClass,
+    (isXS$ | async) ? 'btn-block' : ''
+  ]"
+  [href]="mainLink.url || links[0].url || undefined"
+  [title]="mainLink.alt || links[0].alt || ''"
+  target="_blank"
+>
+  <span
+    *ngIf="mainLink.iconSvg || links[0].iconSvg"
+    [innerHtml]="mainLink.iconSvg || links[0].iconSvg | safeHtml"
+  ></span>
+  <i
+    [ngClass]="mainLink.iconClass || links[0].iconClass"
+    *ngIf="mainLink.iconClass || links[0].iconClass"
+  ></i>
+  {{ mainLink.title || links[0].title }}
+</a>
+<a
+  angulartics2On="click"
+  angularticsAction="link-button"
+  [angularticsCategory]="category"
+  [angularticsLabel]="module + ': ' + mainLink.title || links[0].title"
+  [angularticsValue]="1"
+  *ngIf="links.length > 1 && (isXS$ | async)"
+  class="btn"
+  [ngClass]="[
+    mainLink.buttonClass || links[0].buttonClass
+      ? mainLink.buttonClass || links[0].buttonClass
+      : buttonDefaultClass,
+    (isXS$ | async) ? 'btn-block' : ''
+  ]"
+  (click)="openLinkDropdownMenuModal()"
+  [title]="mainLink.alt || links[0].alt || ''"
+>
+  <span
+    *ngIf="mainLink.iconSvg || links[0].iconSvg"
+    [innerHtml]="mainLink.iconSvg || links[0].iconSvg | safeHtml"
+  ></span>
+  <i
+    [ngClass]="mainLink.iconClass || links[0].iconClass"
+    *ngIf="mainLink.iconClass || links[0].iconClass"
+  ></i>
+  {{ mainLink.title || links[0].title }} ({{ links.length }})
+</a>
+<div *ngIf="links.length > 1 && !(isXS$ | async)" class="btn-group" dropdown>
+  <button
+    angulartics2On="click"
+    angularticsAction="link-button"
+    [angularticsCategory]="category"
+    [angularticsLabel]="module + ': ' + mainLink.title"
+    [angularticsValue]="1"
+    dropdownToggle
+    type="button"
+    class="btn dropdown-toggle"
+    [ngClass]="[
+      mainLink.buttonClass ? mainLink.buttonClass : buttonDefaultClass
+    ]"
+  >
+    <span
+      *ngIf="mainLink.iconSvg"
+      [innerHtml]="mainLink.iconSvg | safeHtml"
+    ></span>
+    <i [ngClass]="mainLink.iconClass" *ngIf="mainLink.iconClass"></i>
+    {{ mainLink.title }}
+    <span class="caret"></span>
+  </button>
+  <ul *dropdownMenu class="dropdown-menu" role="menu">
+    <ng-container *ngIf="links">
+      <li role="menuitem" *ngFor="let link of links; let i = index">
+        <a
+          angulartics2On="click"
+          angularticsAction="link-button"
+          [angularticsCategory]="category"
+          [angularticsLabel]="module + ': ' + link.title"
+          [angularticsValue]="1"
+          class="dropdown-item"
+          [href]="link.url || undefined"
+          [title]="link.alt || ''"
+          target="_blank"
+        >
+          <span
+            *ngIf="link.iconSvg"
+            [innerHtml]="link.iconSvg | safeHtml"
+          ></span>
+          <i [ngClass]="link.iconClass" *ngIf="link.iconClass"></i>
+          {{ link.title }}
+        </a>
+      </li>
+    </ng-container>
+  </ul>
+</div>

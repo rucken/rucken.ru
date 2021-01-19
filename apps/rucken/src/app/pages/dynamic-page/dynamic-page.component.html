@@ -1,0 +1,33 @@
+<ng-container *ngIf="page$ | async as page; else pageNotFound">
+  <header class="bg-primary pt-4 pt-md-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h2 class="mb-4 mb-md-5 text-white">{{ page.description }}</h2>
+        </div>
+      </div>
+    </div>
+  </header>
+  <app-modules-preview
+    *ngIf="page.type === 'modules'"
+    [page]="page"
+  ></app-modules-preview>
+  <app-contact-preview
+    *ngIf="page.type === 'contact'"
+    [page]="page"
+  ></app-contact-preview>
+</ng-container>
+
+<ng-template #pageNotFound>
+  <header class="pt-4 pt-md-5">
+    <div class="container h-100">
+      <div class="row h-100 align-items-center">
+        <div class="col-lg-12">
+          <h2 class="mb-4 mb-md-5 text-danger">
+            Page "{{ pageName$ | async }}" not found
+          </h2>
+        </div>
+      </div>
+    </div>
+  </header>
+</ng-template>
