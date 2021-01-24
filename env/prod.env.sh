@@ -10,8 +10,8 @@ export MAILER_ADMIN_NAME='Endy Kaufman'
 export MAILER_ROBOT_EMAIL='robot@rucken.ru'
 export MAILER_ROBOT_NAME='Robot Support'
 
-# standard-version: DOCKER_BACKEND_IMAGE='localhost:32000/rucken-site/backend:$VERSION'
-DOCKER_BACKEND_IMAGE='localhost:32000/rucken-site/backend:0.0.1-alpha.1'
+# standard-version: export DOCKER_BACKEND_IMAGE='localhost:32000/rucken-site/backend:$VERSION'
+export DOCKER_BACKEND_IMAGE='localhost:32000/rucken-site/backend:0.0.1-alpha.1'
 
 export LETSENCRYPT_EMAIL='rucken@site15.ru'
 export PROJECT_DOMAIN='rucken.ru'
