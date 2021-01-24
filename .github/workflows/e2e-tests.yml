@@ -40,4 +40,4 @@ jobs:
         run: |
           . ./env/prod.env.sh
           export MAILER_TRANSPORT=${{ secrets.MAILER_TRANSPORT }}
-          npm run build
+          npm run build:ssr
