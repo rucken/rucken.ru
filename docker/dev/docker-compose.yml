@@ -1,0 +1,31 @@
+version: "3"
+networks:
+    rucken-site-network:
+        ipam:
+            config:
+                - subnet: "172.110.0.0/16"
+
+services:
+    rucken-site-backend:
+        container_name: "rucken-site-backend-service"
+        image: node:12
+        user: $UID:$GID
+        environment:
+            - TITLE=${TITLE}
+            - MAILER_ADMIN_EMAIL=${MAILER_ADMIN_EMAIL}
+            - MAILER_ADMIN_NAME=${MAILER_ADMIN_NAME}
+            - MAILER_ROBOT_EMAIL=${MAILER_ROBOT_EMAIL}
+            - MAILER_ROBOT_NAME=${MAILER_ROBOT_NAME}
+            - MAILER_TRANSPORT=${MAILER_TRANSPORT}
+        working_dir: "/app"
+        volumes:
+            - ./../../:/app
+        # network_mode: host
+        networks:
+            - rucken-site-network
+        # extra_hosts:
+        #     - "host.docker.internal:127.0.0.1"
+        ports:
+            - "9090:5000"
+        tty: true
+        command: "npm run dev:ssr"

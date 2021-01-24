@@ -1,0 +1,29 @@
+version: "3"
+networks:
+  rucken-site-network:
+    ipam:
+      config:
+        - subnet: "172.120.0.0/16"
+
+services:
+  rucken-site-backend:
+    image: "rucken-site/backend:local"
+    container_name: "rucken-site-backend-service"
+    environment:
+      - TITLE=${TITLE}
+      - MAILER_ADMIN_EMAIL=${MAILER_ADMIN_EMAIL}
+      - MAILER_ADMIN_NAME=${MAILER_ADMIN_NAME}
+      - MAILER_ROBOT_EMAIL=${MAILER_ROBOT_EMAIL}
+      - MAILER_ROBOT_NAME=${MAILER_ROBOT_NAME}
+      - MAILER_TRANSPORT=${MAILER_TRANSPORT}
+    build:
+      context: ../../
+      dockerfile: ./docker/__Dockerfile/Dockerfile.rucken-site-backend
+    # network_mode: host
+    networks:
+      - rucken-site-network
+    # extra_hosts:
+    #   - "host.docker.internal:172.11.0.1"
+    ports:
+      - "9090:5000"
+    tty: true

@@ -7,6 +7,9 @@
 /dist
 /tmp
 /out-tsc
+/k8s/local
+/k8s/prod
+/scripts/*.js
 
 # dependencies
 /node_modules
@@ -36,6 +39,7 @@ npm-debug.log
 yarn-error.log
 testem.log
 /typings
+*.log
 
 # System Files
 .DS_Store

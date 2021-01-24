@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  rucken-site-backend:
+    image: 'rucken-site/backend:local'
+    build:
+      context: ../../
+      dockerfile: ./docker/__Dockerfile/Dockerfile.rucken-site-backend
