@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.1-alpha.1](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.0...v0.0.1-alpha.1) (2021-01-24)
 
-
 ### Bug Fixes
 
-* **ci:** update deploy and test actions ([a0d0c03](https://github.com/rucken.ru/core/commit/a0d0c03953b4d9c603b036d68d1898dae3229662))
+-   **ci:** update deploy and test actions ([a0d0c03](https://github.com/rucken.ru/core/commit/a0d0c03953b4d9c603b036d68d1898dae3229662))
 
 ### 0.0.1-alpha.0 (2021-01-24)
 
