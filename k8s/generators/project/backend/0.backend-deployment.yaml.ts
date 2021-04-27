@@ -47,11 +47,11 @@ export const backendDeploymentYaml = {
                         resources: {
                             requests: {
                                 memory: `180Mi`,
-                                cpu: `500m`,
+                                cpu: `350m`,
                             },
                             limits: {
                                 memory: `350Mi`,
-                                cpu: `700m`,
+                                cpu: `500m`,
                             },
                         },
                     },

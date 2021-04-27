@@ -1,6 +1,6 @@
 import { HttpException, Module, ValidationPipe } from '@nestjs/common';
 import { APP_INTERCEPTOR, APP_PIPE } from '@nestjs/core';
-import { AngularUniversalModule, applyDomino } from '@nestjs/ng-universal';
+import { AngularUniversalModule, applyDomino, InMemoryCacheStorage } from '@nestjs/ng-universal';
 import { existsSync } from 'fs';
 import { join } from 'path';
 // eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
@@ -36,6 +36,9 @@ applyDomino(global, join(BROWSER_DIR, 'index.html'));
         AngularUniversalModule.forRoot({
             bootstrap: AppServerModule,
             viewsPath: BROWSER_DIR,
+            cache: {
+                storage: new InMemoryCacheStorage(),
+            },
         }),
     ],
     controllers: [...APP_CONTROLLERS],
