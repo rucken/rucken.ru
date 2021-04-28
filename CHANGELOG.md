@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.1-alpha.3](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2021-04-27)
 
-
 ### Features
 
-* add use cache in ssr mode, change limit of processor in k8s ([f363727](https://github.com/rucken.ru/core/commit/f363727daeb86c17cbab25cfc7e2a418e44267d9))
+-   add use cache in ssr mode, change limit of processor in k8s ([f363727](https://github.com/rucken.ru/core/commit/f363727daeb86c17cbab25cfc7e2a418e44267d9))
 
 ### [0.0.1-alpha.2](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.1...v0.0.1-alpha.2) (2021-01-24)
 
