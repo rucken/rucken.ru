@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.4](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2021-04-28)
+
+
+### Features
+
+* add drop prev release on deploy ([889d32a](https://github.com/rucken.ru/core/commit/889d32affb486ddc912b37647740bd980f86e889))
+
 ### [0.0.1-alpha.3](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.2...v0.0.1-alpha.3) (2021-04-27)
 
 ### Features
