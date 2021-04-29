@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.6](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2021-04-29)
+
+
+### Bug Fixes
+
+* update letsencrypt email ([25dc193](https://github.com/rucken.ru/core/commit/25dc19314bee9e9f350a712c3e983901bccc36ef))
+
 ### [0.0.1-alpha.5](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2021-04-28)
 
 ### Features
