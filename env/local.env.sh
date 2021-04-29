@@ -12,7 +12,7 @@ export MAILER_ROBOT_NAME='Robot Support'
 
 export DOCKER_BACKEND_IMAGE='rucken-site/backend:local'
 
-export LETSENCRYPT_EMAIL='rucken@site15.ru'
+export LETSENCRYPT_EMAIL='admin@site15.ru'
 export PROJECT_DOMAIN='localhost'
 export PROJECT_BACKEND_INGRESS_REWRITE_TARGET='/$2'
 export PROJECT_BACKEND_INGRESS_PATH='/rucken-site(/|$)(.*)'
