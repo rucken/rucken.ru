@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.1-alpha.5](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.4...v0.0.1-alpha.5) (2021-04-28)
 
-
 ### Features
 
-* update ingress config for networking.k8s.io/v1 ([7169406](https://github.com/rucken.ru/core/commit/7169406af602f84368cf5138c52c6fd2396b511b))
+-   update ingress config for networking.k8s.io/v1 ([7169406](https://github.com/rucken.ru/core/commit/7169406af602f84368cf5138c52c6fd2396b511b))
 
 ### [0.0.1-alpha.4](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.3...v0.0.1-alpha.4) (2021-04-28)
 
