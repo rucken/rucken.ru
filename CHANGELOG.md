@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.1-alpha.8](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.7...v0.0.1-alpha.8) (2021-08-11)
+
 ### [0.0.1-alpha.7](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2021-04-29)
 
 ### Bug Fixes
