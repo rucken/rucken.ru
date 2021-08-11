@@ -1,312 +1,334 @@
 {
-  "version": 1,
-  "projects": {
-    "rucken": {
-      "projectType": "application",
-      "root": "apps/rucken",
-      "sourceRoot": "apps/rucken/src",
-      "prefix": "rucken",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/apps/rucken",
-            "index": "apps/rucken/src/index.html",
-            "main": "apps/rucken/src/main.ts",
-            "polyfills": "apps/rucken/src/polyfills.ts",
-            "tsConfig": "apps/rucken/tsconfig.app.json",
-            "aot": true,
-            "assets": [
-              "apps/rucken/src/robots.txt",
-              "apps/rucken/src/sitemap.xml",
-              "apps/rucken/src/favicon.ico",
-              "apps/rucken/src/assets",
-              "apps/rucken/src/img",
-              "apps/rucken/src/manifest.json"
-            ],
-            "styles": ["apps/rucken/src/styles.scss"],
-            "scripts": [],
-            "allowedCommonJsDependencies": [
-              "ngx-dynamic-form-builder",
-              "class-transformer",
-              "validator",
-              "class-validator-multi-lang",
-              "pupa",
-              "graphql-tag",
-              "zen-observable",
-              "subscriptions-transport-ws",
-              "hammerjs"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "apps/rucken/src/environments/environment.ts",
-                  "with": "apps/rucken/src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "namedChunks": false,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+    "version": 1,
+    "projects": {
+        "rucken": {
+            "projectType": "application",
+            "root": "apps/rucken",
+            "sourceRoot": "apps/rucken/src",
+            "prefix": "rucken",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/apps/rucken",
+                        "index": "apps/rucken/src/index.html",
+                        "main": "apps/rucken/src/main.ts",
+                        "polyfills": "apps/rucken/src/polyfills.ts",
+                        "tsConfig": "apps/rucken/tsconfig.app.json",
+                        "aot": true,
+                        "assets": [
+                            "apps/rucken/src/robots.txt",
+                            "apps/rucken/src/sitemap.xml",
+                            "apps/rucken/src/favicon.ico",
+                            "apps/rucken/src/assets",
+                            "apps/rucken/src/img",
+                            "apps/rucken/src/manifest.json"
+                        ],
+                        "styles": ["apps/rucken/src/styles.scss"],
+                        "scripts": [],
+                        "allowedCommonJsDependencies": [
+                            "ngx-dynamic-form-builder",
+                            "class-transformer",
+                            "validator",
+                            "class-validator-multi-lang",
+                            "pupa",
+                            "graphql-tag",
+                            "zen-observable",
+                            "subscriptions-transport-ws",
+                            "hammerjs"
+                        ]
+                    },
+                    "configurations": {
+                        "local": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/rucken/src/environments/environment.ts",
+                                    "with": "apps/rucken/src/environments/environment.local.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        },
+                        "production": {
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/rucken/src/environments/environment.ts",
+                                    "with": "apps/rucken/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "2mb",
+                                    "maximumError": "5mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
+                                }
+                            ]
+                        }
+                    }
                 },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "rucken:build",
+                        "proxyConfig": "apps/rucken/proxy.conf.json"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "rucken:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "rucken:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["apps/rucken/src/**/*.ts", "apps/rucken/src/**/*.html"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "outputs": ["coverage/apps/rucken"],
+                    "options": {
+                        "jestConfig": "apps/rucken/jest.config.js",
+                        "passWithNoTests": true
+                    }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/apps/rucken/server",
+                        "main": "server.ts",
+                        "tsConfig": "tsconfig.server.json",
+                        "externalDependencies": [
+                            "rxjs",
+                            "@nestjs/common",
+                            "@nestjs/core",
+                            "@nestjs/platform-express",
+                            "@nestjs/graphql",
+                            "reflect-metadata",
+                            "class-transformer",
+                            "class-validator",
+                            "apollo-server-express",
+                            "class-validator-multi-lang",
+                            "graphql-type-json",
+                            "@nestjs-modules/mailer",
+                            "@nestjs/microservices",
+                            "@nestjs/microservices/microservices-module",
+                            "@nestjs/websockets",
+                            "@nestjs/websockets/socket-module",
+                            "cache-manager"
+                        ]
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/rucken/src/environments/environment.ts",
+                                    "with": "apps/rucken/src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "sourceMap": false,
+                            "optimization": false
+                        }
+                    }
+                },
+                "serve-ssr": {
+                    "builder": "@nguniversal/builders:ssr-dev-server",
+                    "options": {
+                        "browserTarget": "rucken:build",
+                        "serverTarget": "rucken:server"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "rucken:build:production",
+                            "serverTarget": "rucken:server:production"
+                        }
+                    }
+                },
+                "prerender": {
+                    "builder": "@nguniversal/builders:prerender",
+                    "options": {
+                        "browserTarget": "rucken:build:production",
+                        "serverTarget": "rucken:server:production",
+                        "routes": ["/"]
+                    },
+                    "configurations": {
+                        "production": {}
+                    }
                 }
-              ]
             }
-          }
         },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "rucken:build",
-            "proxyConfig": "apps/rucken/proxy.conf.json"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "rucken:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "rucken:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/rucken/src/**/*.ts",
-              "apps/rucken/src/**/*.html"
-            ]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/rucken"],
-          "options": {
-            "jestConfig": "apps/rucken/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/apps/rucken/server",
-            "main": "server.ts",
-            "tsConfig": "tsconfig.server.json",
-            "externalDependencies": [
-              "rxjs",
-              "@nestjs/common",
-              "@nestjs/core",
-              "@nestjs/platform-express",
-              "@nestjs/graphql",
-              "reflect-metadata",
-              "@prisma/client",
-              "class-transformer",
-              "class-validator",
-              "apollo-server-express",
-              "class-validator-multi-lang",
-              "graphql-type-json",
-              "@nestjs-modules/mailer",
-              "@nestjs/microservices",
-              "@nestjs/microservices/microservices-module",
-              "@nestjs/websockets",
-              "@nestjs/websockets/socket-module",
-              "cache-manager"
-            ]
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media",
-              "fileReplacements": [
-                {
-                  "replace": "apps/rucken/src/environments/environment.ts",
-                  "with": "apps/rucken/src/environments/environment.prod.ts"
+        "rucken-e2e": {
+            "root": "apps/rucken-e2e",
+            "sourceRoot": "apps/rucken-e2e/src",
+            "projectType": "application",
+            "architect": {
+                "e2e": {
+                    "builder": "@nrwl/cypress:cypress",
+                    "options": {
+                        "cypressConfig": "apps/rucken-e2e/cypress.json",
+                        "tsConfig": "apps/rucken-e2e/tsconfig.e2e.json",
+                        "devServerTarget": "rucken:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "rucken:serve:production"
+                        }
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["apps/rucken-e2e/**/*.{js,ts}"]
+                    }
                 }
-              ],
-              "sourceMap": false,
-              "optimization": false
             }
-          }
         },
-        "serve-ssr": {
-          "builder": "@nguniversal/builders:ssr-dev-server",
-          "options": {
-            "browserTarget": "rucken:build",
-            "serverTarget": "rucken:server"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "rucken:build:production",
-              "serverTarget": "rucken:server:production"
-            }
-          }
-        },
-        "prerender": {
-          "builder": "@nguniversal/builders:prerender",
-          "options": {
-            "browserTarget": "rucken:build:production",
-            "serverTarget": "rucken:server:production",
-            "routes": ["/"]
-          },
-          "configurations": {
-            "production": {}
-          }
-        }
-      }
-    },
-    "rucken-e2e": {
-      "root": "apps/rucken-e2e",
-      "sourceRoot": "apps/rucken-e2e/src",
-      "projectType": "application",
-      "architect": {
-        "e2e": {
-          "builder": "@nrwl/cypress:cypress",
-          "options": {
-            "cypressConfig": "apps/rucken-e2e/cypress.json",
-            "tsConfig": "apps/rucken-e2e/tsconfig.e2e.json",
-            "devServerTarget": "rucken:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "rucken:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/rucken-e2e/**/*.{js,ts}"]
-          }
-        }
-      }
-    },
-    "api": {
-      "root": "apps/api",
-      "sourceRoot": "apps/api/src",
-      "projectType": "application",
-      "prefix": "api",
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
-          "options": {
-            "outputPath": "dist/apps/api",
-            "main": "apps/api/src/main.ts",
-            "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "externalDependencies": [
-                "rxjs",
-                "@nestjs/common",
-                "@nestjs/core",
-                "@nestjs/platform-express",
-                "@nestjs/graphql",
-                "reflect-metadata",
-                "@prisma/client",
-                "class-transformer",
-                "class-validator",
-                "apollo-server-express",
-                "class-validator-multi-lang",
-                "graphql-type-json",
-                "@nestjs-modules/mailer",
-                "@nestjs/microservices",
-                "@nestjs/microservices/microservices-module",
-                "@nestjs/websockets",
-                "@nestjs/websockets/socket-module",
-                "cache-manager"
-              ],
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/api/src/environments/environment.ts",
-                  "with": "apps/api/src/environments/environment.prod.ts"
+        "api": {
+            "root": "apps/api",
+            "sourceRoot": "apps/api/src",
+            "projectType": "application",
+            "prefix": "api",
+            "architect": {
+                "build": {
+                    "builder": "@nrwl/node:build",
+                    "outputs": ["{options.outputPath}"],
+                    "options": {
+                        "outputPath": "dist/apps/api",
+                        "main": "apps/api/src/main.ts",
+                        "tsConfig": "apps/api/tsconfig.app.json",
+                        "assets": ["apps/api/src/assets"]
+                    },
+                    "configurations": {
+                        "production": {
+                            "externalDependencies": [
+                                "rxjs",
+                                "@nestjs/common",
+                                "@nestjs/core",
+                                "@nestjs/platform-express",
+                                "@nestjs/graphql",
+                                "reflect-metadata",
+                                "class-transformer",
+                                "class-validator",
+                                "apollo-server-express",
+                                "class-validator-multi-lang",
+                                "graphql-type-json",
+                                "@nestjs-modules/mailer",
+                                "@nestjs/microservices",
+                                "@nestjs/microservices/microservices-module",
+                                "@nestjs/websockets",
+                                "@nestjs/websockets/socket-module",
+                                "cache-manager"
+                            ],
+                            "optimization": true,
+                            "extractLicenses": true,
+                            "inspect": false,
+                            "fileReplacements": [
+                                {
+                                    "replace": "apps/api/src/environments/environment.ts",
+                                    "with": "apps/api/src/environments/environment.prod.ts"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@nrwl/node:execute",
+                    "options": {
+                        "buildTarget": "api:build"
+                    }
+                },
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["apps/api/**/*.ts"]
+                    }
+                },
+                "test": {
+                    "builder": "@nrwl/jest:jest",
+                    "outputs": ["coverage/apps/api"],
+                    "options": {
+                        "jestConfig": "apps/api/jest.config.js",
+                        "passWithNoTests": true
+                    }
                 }
-              ]
             }
-          }
         },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "api:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
-          "options": {
-            "jestConfig": "apps/api/jest.config.js",
-            "passWithNoTests": true
-          }
+        "api-interfaces": {
+            "root": "libs/api-interfaces",
+            "sourceRoot": "libs/api-interfaces/src",
+            "projectType": "library",
+            "architect": {
+                "lint": {
+                    "builder": "@nrwl/linter:eslint",
+                    "options": {
+                        "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
+                    }
+                }
+            }
         }
-      }
     },
-    "api-interfaces": {
-      "root": "libs/api-interfaces",
-      "sourceRoot": "libs/api-interfaces/src",
-      "projectType": "library",
-      "architect": {
-        "lint": {
-          "builder": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": ["libs/api-interfaces/**/*.ts"]
-          }
+    "cli": {
+        "defaultCollection": "@nrwl/angular",
+        "analytics": false
+    },
+    "schematics": {
+        "@nrwl/angular": {
+            "application": {
+                "linter": "eslint"
+            },
+            "library": {
+                "linter": "eslint"
+            },
+            "storybook-configuration": {
+                "linter": "eslint"
+            }
+        },
+        "@nrwl/angular:application": {
+            "unitTestRunner": "jest",
+            "e2eTestRunner": "cypress"
+        },
+        "@nrwl/angular:library": {
+            "unitTestRunner": "jest"
+        },
+        "@nrwl/angular:component": {
+            "style": "scss"
         }
-      }
-    }
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/angular",
-    "analytics": false
-  },
-  "schematics": {
-    "@nrwl/angular": {
-      "application": {
-        "linter": "eslint"
-      },
-      "library": {
-        "linter": "eslint"
-      },
-      "storybook-configuration": {
-        "linter": "eslint"
-      }
     },
-    "@nrwl/angular:application": {
-      "unitTestRunner": "jest",
-      "e2eTestRunner": "cypress"
-    },
-    "@nrwl/angular:library": {
-      "unitTestRunner": "jest"
-    },
-    "@nrwl/angular:component": {
-      "style": "scss"
-    }
-  },
-  "defaultProject": "rucken"
+    "defaultProject": "rucken"
 }

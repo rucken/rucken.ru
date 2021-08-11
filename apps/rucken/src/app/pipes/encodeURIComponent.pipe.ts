@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'encodeURIComponent',
+    name: 'encodeURIComponent',
 })
 export class EncodeURIComponentPipe implements PipeTransform {
-  transform(value: any, args?: any): any {
-    return encodeURIComponent(value);
-  }
+    transform(value: any): any {
+        return encodeURIComponent(value);
+    }
 }
