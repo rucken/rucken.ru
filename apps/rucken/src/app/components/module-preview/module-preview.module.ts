@@ -6,14 +6,8 @@ import { PipeModule } from '../../pipes/pipe.module';
 import { LinkButtonModule } from '../link-button/link-button.module';
 import { ModulePreviewComponent } from './module-preview.component';
 @NgModule({
-  imports: [
-    CommonModule,
-    LinkButtonModule,
-    PipeModule,
-    NgxGalleryModule,
-    Angulartics2Module,
-  ],
-  declarations: [ModulePreviewComponent],
-  exports: [ModulePreviewComponent],
+    imports: [CommonModule, LinkButtonModule, PipeModule, NgxGalleryModule, Angulartics2Module],
+    declarations: [ModulePreviewComponent],
+    exports: [ModulePreviewComponent],
 })
 export class ModulePreviewModule {}

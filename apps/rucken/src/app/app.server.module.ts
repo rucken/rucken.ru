@@ -5,12 +5,7 @@ import { ServerModule } from '@angular/platform-server';
 import { AppComponent } from './app.component';
 import { ApplicationModule } from './app.module';
 @NgModule({
-  imports: [
-    ApplicationModule,
-    ServerModule,
-    FlexLayoutServerModule,
-    NoopAnimationsModule,
-  ],
-  bootstrap: [AppComponent],
+    imports: [ApplicationModule, ServerModule, FlexLayoutServerModule, NoopAnimationsModule],
+    bootstrap: [AppComponent],
 })
 export class AppServerModule {}

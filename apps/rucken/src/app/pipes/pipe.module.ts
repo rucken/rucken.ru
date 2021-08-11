@@ -4,8 +4,8 @@ import { EncodeURIComponentPipe } from './encodeURIComponent.pipe';
 import { SafeHtmlPipe } from './safe-html.pipe';
 
 @NgModule({
-  imports: [CommonModule],
-  declarations: [EncodeURIComponentPipe, SafeHtmlPipe, SafeHtmlPipe],
-  exports: [EncodeURIComponentPipe, SafeHtmlPipe],
+    imports: [CommonModule],
+    declarations: [EncodeURIComponentPipe, SafeHtmlPipe, SafeHtmlPipe],
+    exports: [EncodeURIComponentPipe, SafeHtmlPipe],
 })
 export class PipeModule {}

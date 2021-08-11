@@ -4,10 +4,9 @@ All notable changes to this project will be documented in this file. See [standa
 
 ### [0.0.1-alpha.7](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.6...v0.0.1-alpha.7) (2021-04-29)
 
-
 ### Bug Fixes
 
-* revert ingress to networking.k8s.io/v1beta1 ([9e704be](https://github.com/rucken.ru/core/commit/9e704be143f6794ecbe84f0f9899cf0a5c6298d1))
+-   revert ingress to networking.k8s.io/v1beta1 ([9e704be](https://github.com/rucken.ru/core/commit/9e704be143f6794ecbe84f0f9899cf0a5c6298d1))
 
 ### [0.0.1-alpha.6](https://github.com/rucken.ru/core/compare/v0.0.1-alpha.5...v0.0.1-alpha.6) (2021-04-29)
 

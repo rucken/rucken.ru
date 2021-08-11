@@ -5,7 +5,7 @@ import { ModulePageComponent } from './module-page.component';
 import { ModulePageRoutes } from './module-page.routing';
 
 @NgModule({
-  imports: [CommonModule, SidenavModule, ModulePageRoutes],
-  declarations: [ModulePageComponent],
+    imports: [CommonModule, SidenavModule, ModulePageRoutes],
+    declarations: [ModulePageComponent],
 })
 export class ModulePageModule {}

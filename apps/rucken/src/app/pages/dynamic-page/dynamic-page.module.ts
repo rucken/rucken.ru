@@ -6,12 +6,7 @@ import { DynamicPageComponent } from './dynamic-page.component';
 import { DynamicPageRoutes } from './dynamic-page.routing';
 
 @NgModule({
-  imports: [
-    CommonModule,
-    ModulesPreviewModule,
-    ContactPreviewModule,
-    DynamicPageRoutes,
-  ],
-  declarations: [DynamicPageComponent],
+    imports: [CommonModule, ModulesPreviewModule, ContactPreviewModule, DynamicPageRoutes],
+    declarations: [DynamicPageComponent],
 })
 export class DynamicPageModule {}

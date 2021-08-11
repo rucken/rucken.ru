@@ -1,40 +1,40 @@
 {
-  "npmScope": "rucken",
-  "affected": {
-    "defaultBase": "master"
-  },
-  "implicitDependencies": {
-    "angular.json": "*",
-    "package.json": {
-      "dependencies": "*",
-      "devDependencies": "*"
+    "npmScope": "rucken",
+    "affected": {
+        "defaultBase": "master"
     },
-    "tsconfig.base.json": "*",
-    "tslint.json": "*",
-    ".eslintrc.json": "*",
-    "nx.json": "*"
-  },
-  "tasksRunnerOptions": {
-    "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
-      "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
-      }
+    "implicitDependencies": {
+        "angular.json": "*",
+        "package.json": {
+            "dependencies": "*",
+            "devDependencies": "*"
+        },
+        "tsconfig.base.json": "*",
+        "tslint.json": "*",
+        ".eslintrc.json": "*",
+        "nx.json": "*"
+    },
+    "tasksRunnerOptions": {
+        "default": {
+            "runner": "@nrwl/workspace/tasks-runners/default",
+            "options": {
+                "cacheableOperations": ["build", "lint", "test", "e2e"]
+            }
+        }
+    },
+    "projects": {
+        "rucken": {
+            "tags": []
+        },
+        "rucken-e2e": {
+            "tags": [],
+            "implicitDependencies": ["rucken"]
+        },
+        "api": {
+            "tags": []
+        },
+        "api-interfaces": {
+            "tags": []
+        }
     }
-  },
-  "projects": {
-    "rucken": {
-      "tags": []
-    },
-    "rucken-e2e": {
-      "tags": [],
-      "implicitDependencies": ["rucken"]
-    },
-    "api": {
-      "tags": []
-    },
-    "api-interfaces": {
-      "tags": []
-    }
-  }
 }

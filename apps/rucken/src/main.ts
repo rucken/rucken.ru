@@ -6,15 +6,15 @@ import { RUCKEN_SITE } from './app/data/rucken-site';
 import { environment } from './environments/environment';
 
 Sentry.init({
-  dsn: RUCKEN_SITE.logger.sentryDsn,
+    dsn: RUCKEN_SITE.logger.sentryDsn,
 });
 
 if (environment.production) {
-  enableProdMode();
+    enableProdMode();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  platformBrowserDynamic()
-    .bootstrapModule(ApplicationModule)
-    .catch((err) => console.error(err));
+    platformBrowserDynamic()
+        .bootstrapModule(ApplicationModule)
+        .catch((err) => console.error(err));
 });

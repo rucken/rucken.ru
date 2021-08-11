@@ -9,17 +9,9 @@ import { PipeModule } from '../../pipes/pipe.module';
 import { LinkButtonComponent } from './link-button.component';
 import { LinkDropdownMenuModalComponent } from './link-dropdown-menu-modal/link-dropdown-menu-modal.component';
 @NgModule({
-  imports: [
-    CommonModule,
-    RouterModule,
-    ModalModule.forRoot(),
-    BsDropdownModule.forRoot(),
-    PipeModule,
-    FlexLayoutModule,
-    Angulartics2Module,
-  ],
-  entryComponents: [LinkDropdownMenuModalComponent],
-  declarations: [LinkButtonComponent, LinkDropdownMenuModalComponent],
-  exports: [LinkButtonComponent, LinkDropdownMenuModalComponent],
+    imports: [CommonModule, RouterModule, ModalModule.forRoot(), BsDropdownModule.forRoot(), PipeModule, FlexLayoutModule, Angulartics2Module],
+    entryComponents: [LinkDropdownMenuModalComponent],
+    declarations: [LinkButtonComponent, LinkDropdownMenuModalComponent],
+    exports: [LinkButtonComponent, LinkDropdownMenuModalComponent],
 })
 export class LinkButtonModule {}

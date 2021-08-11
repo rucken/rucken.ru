@@ -1,14 +1,8 @@
 {
-  "extends": "tsconfig.base.json",
-  "compilerOptions": {
-    "module": "commonjs",
-    "types": ["jest", "node", "cypress"]
-  },
-  "include": [
-    "**/*.spec.ts",
-    "**/*.spec.tsx",
-    "**/*.spec.js",
-    "**/*.spec.jsx",
-    "**/*.d.ts"
-  ]
+    "extends": "tsconfig.base.json",
+    "compilerOptions": {
+        "module": "commonjs",
+        "types": ["jest", "node", "cypress"]
+    },
+    "include": ["**/*.spec.ts", "**/*.spec.tsx", "**/*.spec.js", "**/*.spec.jsx", "**/*.d.ts"]
 }

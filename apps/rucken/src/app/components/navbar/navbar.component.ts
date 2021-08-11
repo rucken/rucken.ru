@@ -7,23 +7,23 @@ import { SiteModel } from '../../models/site.model';
 
 @UntilDestroy()
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: 'app-navbar',
+    templateUrl: './navbar.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class NavbarComponent {
-  @Input()
-  site: SiteModel;
+    @Input()
+    site: SiteModel;
 
-  @BindObservable()
-  isCollapsed = true;
-  isCollapsed$: Observable<boolean>;
+    @BindObservable()
+    isCollapsed = true;
+    isCollapsed$: Observable<boolean>;
 
-  constructor(private router: Router) {
-    this.router.events.pipe(untilDestroyed(this)).subscribe((event) => {
-      if (event instanceof NavigationEnd) {
-        this.isCollapsed = true;
-      }
-    });
-  }
+    constructor(private router: Router) {
+        this.router.events.pipe(untilDestroyed(this)).subscribe((event) => {
+            if (event instanceof NavigationEnd) {
+                this.isCollapsed = true;
+            }
+        });
+    }
 }

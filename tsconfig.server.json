@@ -1,12 +1,12 @@
 {
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "outDir": "./out-tsc/app-server",
-    "module": "commonjs",
-    "types": ["node"]
-  },
-  "files": ["apps/rucken/src/main.server.ts", "server.ts"],
-  "angularCompilerOptions": {
-    "entryModule": "./apps/rucken/src/app/app.server.module#AppServerModule"
-  }
+    "extends": "./tsconfig.base.json",
+    "compilerOptions": {
+        "outDir": "./out-tsc/app-server",
+        "module": "commonjs",
+        "types": ["node"]
+    },
+    "files": ["apps/rucken/src/main.server.ts", "server.ts"],
+    "angularCompilerOptions": {
+        "entryModule": "./apps/rucken/src/app/app.server.module#AppServerModule"
+    }
 }

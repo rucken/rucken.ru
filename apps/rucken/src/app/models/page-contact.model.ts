@@ -1,23 +1,23 @@
 import { plainToClassFromExist } from 'class-transformer';
 
 export class PageContactModel<T> {
-  type: 'contact';
+    type: 'contact';
 
-  name?: T = undefined;
+    name?: T = undefined;
 
-  title?: string = undefined;
+    title?: string = undefined;
 
-  description?: string = undefined;
+    description?: string = undefined;
 
-  handlerUrl: string = undefined;
+    handlerUrl: string = undefined;
 
-  alt?: string = undefined;
+    alt?: string = undefined;
 
-  iconSvg?: string = undefined;
+    iconSvg?: string = undefined;
 
-  iconClass?: string = undefined;
+    iconClass?: string = undefined;
 
-  constructor(data?: Partial<PageContactModel<T>>) {
-    plainToClassFromExist(this, data);
-  }
+    constructor(data?: Partial<PageContactModel<T>>) {
+        plainToClassFromExist(this, data);
+    }
 }
