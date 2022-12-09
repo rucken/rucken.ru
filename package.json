@@ -101,7 +101,7 @@
         "@nestjs/common": "^7.6.5",
         "@nestjs/core": "^7.6.5",
         "@nestjs/ng-universal": "^4.2.0",
-        "@nestjs/platform-express": "^7.6.5",
+        "@nestjs/platform-express": "^9.2.1",
         "@ngneat/until-destroy": "^8.0.3",
         "@nguniversal/builders": "^11.0.1",
         "@ngx-meta/core": "^9.0.0",
